@@ -29,7 +29,7 @@ const RecenterMap = ({ coords }) => {
   return null;
 };
 
-const ELDLog = ({ events, dayIndex }) => {
+const ELDLog = ({ events, dayIndex, result }) => {
   const dayMinutesStart = dayIndex * 24 * 60;
   const dayMinutesEnd = (dayIndex + 1) * 24 * 60;
   
@@ -411,7 +411,7 @@ function App() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.1 }}
                   >
-                    <ELDLog events={result.hos_events} dayIndex={i} />
+                    <ELDLog events={result.hos_events} dayIndex={i} result={result} />
                   </motion.div>
                 ))}
               </AnimatePresence>
